@@ -1,15 +1,50 @@
 {
-  "name": "learn-starter",
-  "version": "0.1.0",
+  "name": "stream-helper",
+  "version": "0.0.1",
   "private": true,
+  "main": "public/electron.js",
+  "build": {
+    "appId": "com.marckraw.stream-helper",
+    "productName": "Stream Helper",
+    "files": [
+      "build/**/*",
+      "build/icon.*",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "publish": [
+        "github"
+      ]
+    },
+    "mac": {
+      "hardenedRuntime": true
+    }
+  },
+  "homepage": "./",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "next-dev": "next dev",
+    "next-build": "next build",
+    "next-start": "next start",
+    "electron-start": "electron .",
+    "electron-build": "electron-builder",
+    "build-locally": "npm install && yarn run next-build && yarn run electron-build",
+    "pack": "DEBUG=electron-builder electron-builder --dir",
+    "build": "yarn run next-build",
+    "release": "yarn run build",
+    "start": "concurrently \"cross-env BROWSER=none yarn run next-dev\" \"wait-on http://localhost:3000 && electron .\"",
+    "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
+    "concurrently": "^5.3.0",
+    "cross-env": "^7.0.3",
+    "electron": "^11.1.0",
+    "electron-builder": "^22.9.1",
+    "electron-is-dev": "^1.2.0",
+    "electron-store": "^6.0.1",
     "next": "^10.0.0",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-tooltip": "^4.2.11",
+    "wait-on": "^5.2.0"
   }
 }

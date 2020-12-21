@@ -8,8 +8,8 @@ const {initializeStore} = require('./store.node')
 * Global Variables
 *
 * */
-const mainWindowWidth = 1136;
-const mainWindowHeight = 1020;
+const mainWindowWidth = 960;
+const mainWindowHeight = 640;
 
 const store = initializeStore()
 

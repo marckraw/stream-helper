@@ -1,1 +1,24 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+## Why ?
+App will give us control over our stream with OBS. Will connect to OBS via websockets, exposed by: https://github.com/Palakis/obs-websocket, from JS perspective we use: https://github.com/haganbmj/obs-websocket-js
+
+## Development
+```
+git clone git@github.com:marckraw/stream-helper.git
+```
+Install dependencies
+
+```
+yarn
+```
+
+Run whole setup (NextJS react part + Electron part), run
+```
+yarn start
+```
+it will run `yarn run dev` - for next, and will run `electron .` for Electron.
+
+After a while `BrowserWindow` will be opened with NextJS hot reloaded app.
+
+## Websockets protocol documentation
+[obs-websocket Protocol](https://github.com/Palakis/obs-websocket/blob/4.x-current/docs/generated/protocol.md)
+

@@ -1,12 +1,12 @@
 import '../styles/global.scss'
-import OBSContextProvider from '../contexts/OBSContext';
+import ContextWrapper from '../contexts';
 
 export default function App({ Component, pageProps }) {
   return (
       <>
-        <OBSContextProvider>
+        <ContextWrapper>
           <Component {...pageProps} />
-        </OBSContextProvider>
+        </ContextWrapper>
       </>
     )
 }

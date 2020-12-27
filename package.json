@@ -1,12 +1,13 @@
 {
   "name": "stream-helper",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "main": "public/electron.js",
   "build": {
     "appId": "com.marckraw.stream-helper",
     "productName": "Stream Helper",
     "files": [
+      "out/**/*",
       "public/**/*",
       "build/**/*",
       "build/icon.*",
@@ -26,11 +27,13 @@
     "next-dev": "next dev",
     "next-build": "next build",
     "next-start": "next start",
+    "next-export": "next export",
     "electron-start": "electron .",
     "electron-build": "electron-builder",
-    "build-locally": "yarn && yarn run next-build && yarn run electron-build",
+    "build-locally": "yarn && yarn run next-build && yarn run next-export && yarn run electron-build",
     "pack": "DEBUG=electron-builder electron-builder --dir",
     "build": "yarn run next-build",
+    "build-and-serve-prod": "yarn run next-build && yarn run next-start",
     "release": "yarn run build",
     "start": "concurrently \"cross-env BROWSER=none yarn run next-dev\" \"wait-on http://localhost:3000 && electron .\"",
     "postinstall": "electron-builder install-app-deps"

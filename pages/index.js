@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { OBSContext } from '../contexts/OBSContext';
 import Btn from '../components/Btn';
 import StartUp from '../components/StartUp';
+import PrepareApps from '../components/PrepareApps';
 
 const Home = () => {
   const { obsMethods } = useContext(OBSContext);
@@ -83,6 +84,6 @@ export default function AppWrapper() {
   const { obs } = useContext(OBSContext);
 
   return (
-    obs ? (<Home />) : <StartUp />
+    obs ? (<Home />) : <PrepareApps />
   )
 }

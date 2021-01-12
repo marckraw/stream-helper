@@ -2,6 +2,8 @@ import { useContext } from 'react';
 import OBSWebSocket from 'obs-websocket-js';
 import { OBSContext } from '../contexts/OBSContext';
 import Btn from './Btn';
+import DeviceSelection from './DeviceSelection';
+import SceneCollectionSelection from './SceneCollectionSelection';
 
 const StartUp = () => {
   const OBS = useContext(OBSContext);
@@ -26,6 +28,8 @@ const StartUp = () => {
   return (
     <div className='container'>
       <Btn onClick={handleConnect}>Connect</Btn>
+      <DeviceSelection />
+      <SceneCollectionSelection />
     </div>
   );
 };
